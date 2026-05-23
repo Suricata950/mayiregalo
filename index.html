@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Archivo: index.html -->
+  <!-- Contiene: la estructura HTML mínima y los contenedores principales de la experiencia. -->
+  <meta charset="UTF-8">
+  <title>🌷 Galaxia de Tulipanes 🌷</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="overlay">
+    <button id="overlayCloseBtn" aria-label="Cerrar mensaje inicial">X</button>
+    <h1>Un mensaje eterno para Mayi</h1>
+    <p>Si encontraste esta estrella flotando entre todo lo que hemos guardado aquí, era porque quería dejarte un espacio distinto. No solo una canción o una frase pequeña, sino un lugar donde pudiera quedarse un poquito más todo lo que siento por ti.</p>
+    <p>A veces pienso que lo más bonito de nosotros no está solo en los momentos grandes, sino en la forma en que te vas quedando en mí de maneras silenciosas. En canciones que ya no puedo escuchar igual, en ideas que inevitablemente terminan en tu nombre, en planes que me nacen solo porque imagino que tú estás ahí.</p>
+    <p>Me gusta quererte así: con ternura, con emoción, con ganas de seguir construyendo recuerdos contigo. Me gusta pensar que incluso cuando no sepamos exactamente qué sigue, ya encontramos algo valioso en este pedacito de universo que compartimos.</p>
+    <p>Gracias por existir en mi vida con esa forma tan tuya de iluminar, de moverme el corazón y de convertir lo cotidiano en algo especial. Si algún día dudas de lo importante que eres para mí, vuelve a esta carta y recuerda que sigues siendo de mis pensamientos más bonitos.</p>
+    <p>Siempre voy a querer que este universo tenga un lugar solo para ti.</p>
+    <p id="introInstruction">Haz clic en el corazón para encender la galaxia y descubrir cada momento.</p>
+  </div>
+
+  <!-- Botones de audio -->
+  <button id="pauseBtn" style="display:none;">⏸️ Pausar música</button>
+  <button id="pauseBackgroundBtn" style="display:none;">⏸️ Pausar melodía</button>
+
+  <!-- Librerías -->
+  <div id="letterModal" aria-hidden="true">
+    <div id="letterPanel">
+      <button id="letterCloseBtn" aria-label="Cerrar carta">X</button>
+      <div id="letterMedia">
+        <img id="letterImage" alt="Imagen especial flotante">
+      </div>
+      <div id="letterContent">
+        <p id="letterSubtitle"></p>
+        <h2 id="letterTitle"></h2>
+        <div id="letterBody"></div>
+      </div>
+    </div>
+  </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+  <!-- Script principal -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

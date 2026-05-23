@@ -1,0 +1,13 @@
+node_modules/
+.vite*/
+.vscode/
+
+dist/
+dist-*/
+dist-check*/
+dist-current/
+dist-verify*/
+
+.DS_Store
+Thumbs.db
+npm-debug.log*
