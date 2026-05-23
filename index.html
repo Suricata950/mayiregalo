@@ -23,6 +23,18 @@
   <button id="pauseBtn" style="display:none;">⏸️ Pausar música</button>
   <button id="pauseBackgroundBtn" style="display:none;">⏸️ Pausar melodía</button>
 
+  <!-- Controles de cámara -->
+  <div id="cameraControls">
+    <div class="camera-control">
+      <label for="zoomControl">Zoom</label>
+      <input id="zoomControl" type="range" min="18" max="95" value="55" step="1" aria-label="Acercar o alejar galaxia">
+    </div>
+    <div class="camera-control">
+      <label for="panControl">Mover</label>
+      <input id="panControl" type="range" min="-20" max="20" value="0" step="1" aria-label="Mover galaxia horizontalmente">
+    </div>
+  </div>
+
   <!-- Librerías -->
   <div id="letterModal" aria-hidden="true">
     <div id="letterPanel">

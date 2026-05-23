@@ -134,6 +134,71 @@ canvas {
   top: 10px;
 }
 
+#cameraControls {
+  position: fixed;
+  left: max(10px, env(safe-area-inset-left));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  gap: 10px;
+  width: min(320px, calc(100vw - 24px));
+  padding: 16px;
+  background: rgba(5, 6, 14, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+}
+
+.camera-control {
+  display: grid;
+  gap: 8px;
+}
+
+.camera-control label {
+  font-size: 0.9rem;
+  color: #f9f4ff;
+  letter-spacing: 0.02em;
+}
+
+#cameraControls input[type='range'] {
+  width: 100%;
+  height: 28px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+#cameraControls input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffd6eb;
+  border: 2px solid rgba(255, 255, 255, 0.64);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+#cameraControls input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffd6eb;
+  border: 2px solid rgba(255, 255, 255, 0.64);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+#cameraControls input[type='range']::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+}
+
+#cameraControls input[type='range']::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+}
+
 #pauseBackgroundBtn {
   top: 52px;
 }

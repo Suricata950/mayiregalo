@@ -18,6 +18,50 @@ montarRenderizador(renderizador);
 // Esta velocidad es usada por varios módulos para sincronizar la rotación del núcleo.
 window.speedObject = { speed: 0.002 };
 
+const zoomControl = document.getElementById('zoomControl');
+const panControl = document.getElementById('panControl');
+let currentPanValue = 0;
+
+function actualizarZoom(valor) {
+  if (!valor) {
+    return;
+  }
+
+  const distancia = Number(valor);
+  const direccion = new THREE.Vector3();
+  camara.getWorldDirection(direccion);
+  const destino = controles.target.clone();
+  direccion.multiplyScalar(-distancia);
+  camara.position.copy(destino).add(direccion);
+  controles.update();
+}
+
+function actualizarPan(valor) {
+  const x = Number(valor);
+  const delta = x - currentPanValue;
+  currentPanValue = x;
+
+  if (Math.abs(delta) < 0.001) {
+    return;
+  }
+
+  controles.target.x += delta;
+  camara.position.x += delta;
+  controles.update();
+}
+
+if (zoomControl) {
+  zoomControl.addEventListener('input', (evento) => {
+    actualizarZoom(evento.target.value);
+  });
+}
+
+if (panControl) {
+  panControl.addEventListener('input', (evento) => {
+    actualizarPan(evento.target.value);
+  });
+}
+
 // Construimos los elementos visuales principales de la escena.
 const estrellas = crearEstrellas(escena);
 const nucleo = crearNucleo(escena);
